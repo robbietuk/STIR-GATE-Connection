@@ -36,13 +36,13 @@ echo "Script initialised:" `date +%d.%m.%y-%H:%M:%S`
 ## There are two main options here: 
 ##		1. define `.par` files, or 
 ##		2. provide interfile images (i.e. precreated voxelised phantoms) and as long as STIR can read them, they are usable in this project. 
-Activity=../ExamplePhantoms/STIRparFiles/generate_uniform_cylinder.par
+Activity=../ExamplePhantoms/STIRparFiles/SourceSingleVoxelOutOfD690FOV.par
 Attenuation=../ExamplePhantoms/STIRparFiles/generate_atten_cylinder.par
 
 ## OPTIONAL: Editable fields required by the GATE macro scripts
 GATEMainMacro="MainGATE.mac" ## Main macro script for GATE - links to many GATESubMacro/ files 
 StartTime=0  ## Start time (s) in GATE time
-EndTime=1  ## End time (s) in GATE time
+EndTime=100  ## End time (s) in GATE time
 StoreRootFilesDirectory=Output  ## Save location of root data (default: `Output/`)
 ScannerType="D690"  # Selection of scanner from Examples (eg. D690/mMR)
 ROOT_FILENAME_PREFIX=Sim_$TASK_ID ## This is the output filename of the root file from GATE. We suggest the usage of the $TASK_ID variable in this naming

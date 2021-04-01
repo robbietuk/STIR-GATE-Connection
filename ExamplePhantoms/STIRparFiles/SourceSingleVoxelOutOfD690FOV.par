@@ -1,0 +1,28 @@
+generate_image Parameters :=
+	output filename:=activity
+
+	; This phantom is large with a single voxel out of the D690 FOV
+
+	; Create volume (804, 804, 202) mm
+	X output image size (in pixels):=201
+	Y output image size (in pixels):=201
+	Z output image size (in pixels):=31
+	X voxel size (in mm):= 4
+	Y voxel size (in mm):= 4
+	Z voxel size (in mm):= 6.54
+
+	; use 3x3x3 samples per voxel to reduce sharp edges
+	Z number of samples to take per voxel := 1
+	Y number of samples to take per voxel := 1
+	X number of samples to take per voxel := 1
+
+	shape type:= ellipsoidal cylinder
+	Ellipsoidal Cylinder Parameters:=
+	   radius-x (in mm):=2
+	   radius-y (in mm):=2
+	   length-z (in mm):=6
+	   origin (in mm):={101,380,380}  ;(z,y,x)
+	   END:=
+	value :=20000000
+
+END:=
